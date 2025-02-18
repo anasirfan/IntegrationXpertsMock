@@ -1,0 +1,17 @@
+{
+  "type": "Topology",
+  "arcs": [],
+  "objects": {
+    "countries": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "arcs": [],
+          "id": "840",
+          "properties": {"name": "United States"}
+        }
+      ]
+    }
+  }
+}

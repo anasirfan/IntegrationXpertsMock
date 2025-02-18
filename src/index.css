@@ -1,13 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F9FAFB;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .sidebar {
+    @apply fixed top-0 left-0 w-[345px] h-screen bg-white;
+  }
+
+  .sidebar-menu {
+    @apply mt-[155px] mx-[46px];
+  }
+
+  .sidebar-item {
+    @apply flex items-center px-6 py-4 gap-6 rounded-2xl text-[#737791] hover:bg-[#1559ED] hover:text-white transition-colors;
+  }
+
+  .sidebar-item.active {
+    @apply bg-[#1559ED] text-white shadow-[0px_20px_50px_rgba(55,69,87,0.1)];
+  }
+
+  .sidebar-icon {
+    @apply w-8 h-8;
+  }
+
+  .sidebar-text {
+    @apply text-lg font-semibold;
+  }
+
+  .header {
+    @apply fixed top-0 left-[345px] right-0 h-[120px] bg-white flex items-center justify-between px-10;
+  }
+
+  .search-bar {
+    @apply flex items-center px-6 py-[2px] gap-2 w-[513px] h-[60px] bg-[#F9FAFB] rounded-2xl;
+  }
+
+  .search-input {
+    @apply text-lg text-[#737791] bg-transparent outline-none w-full font-normal;
+  }
+
+  .language-selector {
+    @apply flex items-center px-4 gap-4 h-[60px];
+  }
+
+  .stat-card {
+    @apply relative p-6 bg-white rounded-2xl;
+  }
+
+  .stat-card-1 {
+    @apply bg-[#FFE2E5];
+  }
+
+  .stat-card-2 {
+    @apply bg-[#FFF4DE];
+  }
+
+  .stat-card-3 {
+    @apply bg-[#DCFCE7];
+  }
+
+  .stat-card-4 {
+    @apply bg-[#F3E8FF];
+  }
+
+  .chart-card {
+    @apply bg-white p-6 rounded-2xl border border-[#F8F9FA] shadow-[0px_4px_20px_rgba(238,238,238,0.501967)];
+  }
+
+  .chart-title {
+    @apply text-xl font-semibold text-[#05004E];
+  }
+
+  .chart-subtitle {
+    @apply text-base text-[#737791];
+  }
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  background: #ffffff;
+}
+
+.leaflet-tooltip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: white;
+  font-weight: bold;
+  padding: 0;
+}
+
+.leaflet-tooltip-top:before {
+  display: none;
+}
+
+.leaflet-control-container {
+  display: none;
 }

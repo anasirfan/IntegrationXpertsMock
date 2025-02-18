@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Dashboard from './components/Dashboard';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+import { SidebarProvider } from './context/SidebarContext';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SidebarProvider>
+      <div className="flex bg-[#F8F9FA] min-h-screen">
+        <Sidebar />
+        <div className="flex-1">
+          <Header />
+          <Dashboard />
+        </div>
+      </div>
+    </SidebarProvider>
   );
-}
+};
 
 export default App;
