@@ -2,10 +2,12 @@ import React from 'react';
 import { RiSearchLine, RiNotification3Line, RiArrowDownSLine } from 'react-icons/ri';
 import demoAvatar from '../assets/demo-avatar.png';
 import usaFlag from '../assets/usa-flag.png';
+import { useSidebar } from '../context/SidebarContext';
 
 const Header = () => {
+  const {isCollapsed} = useSidebar();
   return (
-    <header className="bg-white py-4 px-6 flex items-center justify-between shadow-sm">
+    <header className={`bg-white py-4  flex items-center justify-between shadow-sm ${!isCollapsed ? 'pl-72' : 'pl-24'}`}>
       <div className="flex items-center">
         <h1 className="text-2xl font-semibold mr-12">Dashboard</h1>
 
